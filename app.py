@@ -14,11 +14,6 @@ app.secret_key = 'secret'
 api = Api(app)
 
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
-
 # flas_jwt intialization
 jwt = JWT(app, authenticate, identity)
 
